@@ -1,0 +1,45 @@
+{
+  "name": "HungSeed",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest",
+    "setup": "yarn && cd ./ios && pod install",
+    "build:ios": "react-native bundle --entry-file='index.js' --bundle-output='./ios/YourAppName/main.jsbundle' --dev=false --platform='ios' --assets-dest='./ios'",
+    "build:android": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
+    "run-ios": "react-native run-ios",
+    "run-android": "react-native run-android",
+    "export-apk": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res && cd ./android && ./gradlew assembleDebug",
+    "install-apk": "cd ./android/app/build/outputs/apk && adb install app-debug.apk",
+    "build-release": "cd android && ./gradlew clean && ./gradlew assembleRelease"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "prop-types": "^15.6.1",
+    "react": "16.6.0-alpha.8af6728",
+    "react-native": "0.57.4",
+    "react-native-code-push": "^5.4.2",
+    "react-native-smart-splash-screen": "^2.3.5",
+    "react-native-vector-icons": "^6.0.2",
+    "react-navigation": "^2.17.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-decorators": "^7.0.0",
+    "babel-eslint": "^8.2.2",
+    "babel-jest": "23.6.0",
+    "babel-preset-react-native": "4.0.0",
+    "eslint-plugin-import": "^2.10.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.9.1",
+    "eslint-plugin-react-native": "^3.2.1",
+    "jest": "23.6.0",
+    "metro-react-native-babel-preset": "0.49.0",
+    "prettier-eslint": "^8.8.1",
+    "react-test-renderer": "16.6.0-alpha.8af6728"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
