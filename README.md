@@ -27,17 +27,6 @@ To solve it I ran the following commands:
 $ cd node_modules/react-native/scripts && ./ios-install-third-party.sh && cd ../../../
 $ cd node_modules/react-native/third-party/glog-0.3.5/ && ../../scripts/ios-configure-glog.sh && cd ../../../../
 
-Check list of App:
-`code-push app ls`
-
-Generate the update contents (JS bundle and assets) that will be released to the CodePush server:
-`react-native bundle --platform android --entry-file index.js --bundle-output ./CodePush/main.jsbundle --assets-dest ./CodePush`
-
-Release it!
-Android: `code-push release-react AppNameAndroid android`
-iOS: `code-push release-react AppNameIOS ios`
-
-
 
 in RCTLinkingManager.h
 
@@ -70,3 +59,13 @@ continueUserActivity:(nullable NSUserActivity *)userActivity
 
 @end
 `
+
+Check list of App:
+`code-push app ls`
+
+Generate the update contents (JS bundle and assets) that will be released to the CodePush server:
+`react-native bundle --platform android --entry-file index.js --bundle-output ./CodePush/main.jsbundle --assets-dest ./CodePush`
+
+Release it!
+Android: `code-push release-react AppNameAndroid android`
+iOS: `code-push release-react AppNameIOS ios`
